@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.funding.mappers.fundingMapper">		<!-- 이렇게 되면 같은 경로에 BoardMapper 인터페이스가 필요하다. -->
+	<cache />
+
+	<insert id="InsertReFunding" parameterType="FundingVO">
+		insert into
+		funding(
+		f_rename,f_readd,f_price,f_card_1,f_card_2,f_card_3,f_card_4,f_resday,f_num,m_num,c_num
+		)values(
+		#{f_rename},#{f_readd},#{f_price},#{f_card_1},#{f_card_2},#{f_card_3},#{f_card_4},sysdate,funding_f_num.nextval,#{m_num},#{c_num}
+		)
+
+	</insert>
+
+	<select id="MyFunding" parameterType="int" resultType="FundingVO">
+		select from * Funding where m_num =#{m_num}
+	</select>
+
+</mapper>

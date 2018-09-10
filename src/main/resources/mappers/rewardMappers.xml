@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.funding.mappers.rewardMapper">		<!-- 이렇게 되면 같은 경로에 BoardMapper 인터페이스가 필요하다. -->
+	<cache />
+	<select id="DetailRewardList" parameterType="int" resultType="RewardVO">
+		select * from reward
+		where c_num = #{c_num}
+	</select>
+	
+	<insert id="InsertReward" parameterType="RewardVO">
+		insert into reward(
+			c_num, r_num,r_price, r_title, r_detail
+		)values(
+			#{c_num},reward_r_num.nextval, #{r_price}, #{r_title}, #{r_detail}
+		)
+	</insert>
+	
+	<!-- <select id="listReply" resultType="Reply" parameterType="int">
+		select * from Reply where seq=#{seq}
+	</select> -->
+</mapper>

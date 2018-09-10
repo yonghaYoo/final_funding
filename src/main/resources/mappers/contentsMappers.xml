@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.funding.mappers.contentsMappers">		<!-- 이렇게 되면 같은 경로에 BoardMapper 인터페이스가 필요하다. -->
+	<cache />
+	<select id="DetailContents" parameterType="int" resultType="ContentsVO">
+		select * from Contents
+		where c_num = #{c_num}
+	</select>
+	
+	<select id="AllListContents" resultType="ContentsVO" > 
+	select * from Contents
+	 </select>
+
+	<insert id="InsertContents" parameterType="ContentsVO" >
+		insert into contents(
+			c_num,c_title,c_cate,c_intro,c_text,c_midimg,c_topimg,c_dead,c_goal,c_thimg
+		)values(
+			#{c_num},#{c_title},#{c_cate},#{c_intro},#{c_text},#{c_midimg},#{c_topimg},#{c_dead},#{c_goal},#{c_thimg}
+		)
+		
+	</insert>
+	
+	<!-- <update id="RemDayContents" parameterType="String">
+		update contents set c_remday = (#{c_dead}-SYSDATE)+1
+	</update> -->
+	
+	<update id="GoalPerContents" parameterType="ContentsVO">
+		update contents set c_goalper = round(#{c_sumprice}/#{c_goal}*100)
+		where c_num=#{c_num}
+	</update>
+	
+	
+</mapper>
