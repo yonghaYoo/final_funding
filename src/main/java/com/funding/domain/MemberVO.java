@@ -10,15 +10,14 @@ public class MemberVO implements Serializable {
 	private String m_pno;
 	private String m_email;
 	private String m_acc;
-	private int m_ownpoint;
 	private String m_add;
+	private String m_admin;
 	private int c_num;
 	
 	public MemberVO() {}
-	
 
 	public MemberVO(int m_num, String m_name, String m_id, String m_pw, String m_pno, String m_email, String m_acc,
-			int m_ownpoint, String m_add, int c_num) {
+			String m_add, String m_admin, int c_num) {
 		super();
 		this.m_num = m_num;
 		this.m_name = m_name;
@@ -27,13 +26,10 @@ public class MemberVO implements Serializable {
 		this.m_pno = m_pno;
 		this.m_email = m_email;
 		this.m_acc = m_acc;
-		this.m_ownpoint = m_ownpoint;
 		this.m_add = m_add;
+		this.m_admin = m_admin;
 		this.c_num = c_num;
 	}
-
-
-
 
 	public int getM_num() {
 		return m_num;
@@ -77,17 +73,17 @@ public class MemberVO implements Serializable {
 	public void setM_acc(String m_acc) {
 		this.m_acc = m_acc;
 	}
-	public int getM_ownpoint() {
-		return m_ownpoint;
-	}
-	public void setM_ownpoint(int m_ownpoint) {
-		this.m_ownpoint = m_ownpoint;
-	}
 	public String getM_add() {
 		return m_add;
 	}
 	public void setM_add(String m_add) {
 		this.m_add = m_add;
+	}
+	public String getM_admin() {
+		return m_admin;
+	}
+	public void setM_admin(String m_admin) {
+		this.m_admin = m_admin;
 	}
 	public int getC_num() {
 		return c_num;
