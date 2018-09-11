@@ -9,7 +9,7 @@
 		where c_num = #{c_num}
 	</select>
 	<select id="AllListContents" resultType="ContentsVO" > 
-	select * from Contents
+		select * from Contents
 	 </select>
 
 	<insert id="InsertContents" parameterType="ContentsVO" >

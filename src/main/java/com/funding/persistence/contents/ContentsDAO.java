@@ -2,6 +2,8 @@ package com.funding.persistence.contents;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.funding.domain.ContentsVO;
 
 public interface ContentsDAO {

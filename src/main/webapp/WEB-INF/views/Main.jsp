@@ -5,16 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link
-        href="https://fonts.googleapis.com/css?family=Gothic+A1:700&amp;subset=korean"
-        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gothic+A1:700&amp;subset=korean" rel="stylesheet">
 
 
 <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/Main.css">
-<script src="jquery.js" type="text/javascript"></script>
-<script src="jQuery/Main.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/resources/css/Main.css">
+<script src="/resources/js/jquery.js" type="text/javascript"></script>
+<script src="/resources/jQuery/Main.js" type="text/javascript"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -73,12 +71,12 @@
    
    <section id="mainFirst">
       <div id="subImage">
-         <img  src="img/main4.jpg">
+         <img  src="/resources/img/main4.jpg">
       </div>
       <div id="shadows">
          </div>
       <div id="mainImage">
-            <img  src="img/main5.jpg">
+            <img  src="/resources/img/main5.jpg">
             
          <div  id="mainText">
             <h1>
@@ -103,7 +101,7 @@
             
             <div class = "item">
                <div class="itemimg">
-                  <img  src="img/cat04.jpg">
+                  <img  src="/resources/img/cat04.jpg">
                </div>
                <div class="itemname">
                   전체보기
@@ -112,7 +110,7 @@
             
             <div class = "item">
                <div class="itemimg">
-               <img  src="img/cat01.jpg">
+               <img  src="/resources/img/cat01.jpg">
                </div>
                <div class="itemname">
                   패션/뷰티
@@ -121,7 +119,7 @@
             
             <div class = "item">
                <div class="itemimg">
-               <img  src="img/cat02.jpg">
+               <img  src="/resources/img/cat02.jpg">
                </div>
                <div class="itemname">
                   식음료
@@ -130,7 +128,7 @@
             
             <div class = "item">
                <div class="itemimg">
-               <img  src="img/cat03.jpg">
+               <img  src="/resources/img/cat03.jpg">
                </div>
                <div class="itemname">
                   가전기기
@@ -139,7 +137,7 @@
             
             <div class = "item">
                <div class="itemimg">
-               <img  src="img/cat05.jpg">
+               <img  src="/resources/img/cat05.jpg">
                </div>
                <div class="itemname">
                   소품
