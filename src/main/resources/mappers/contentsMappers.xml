@@ -10,7 +10,7 @@
 	</select>
 	
 	<select id="AllListContents" resultType="ContentsVO" > 
-	select * from Contents
+		select * from Contents
 	 </select>
 
 	<insert id="InsertContents" parameterType="ContentsVO" >
