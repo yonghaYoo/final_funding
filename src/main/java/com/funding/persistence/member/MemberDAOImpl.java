@@ -24,7 +24,7 @@ public class MemberDAOImpl implements MemberDAO {
 		return session.selectOne(namespace +".login", dto);
 	}
 	
-	/*@Override
+	@Override
 	public List<MemberVO> ListMember() {
 		return session.selectList(namespace + ".listMember");
 	}
@@ -32,6 +32,6 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public MemberVO InfoMember(int m_num) {
 		return session.selectOne(namespace + ".infoMember", m_num);
-	}*/
+	}
 
 }
