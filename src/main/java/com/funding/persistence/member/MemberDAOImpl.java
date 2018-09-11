@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.funding.domain.MemberVO;
+import com.funding.dto.MemberDTO;
 
 
 @Repository
@@ -17,9 +18,13 @@ public class MemberDAOImpl implements MemberDAO {
 	private SqlSession session;
 	
 	private static String namespace = "com.funding.mappers.memberMapper";
-	
-	
+
 	@Override
+	public MemberVO login(MemberDTO dto) throws Exception {
+		return session.selectOne(namespace +".login", dto);
+	}
+	
+	/*@Override
 	public List<MemberVO> ListMember() {
 		return session.selectList(namespace + ".listMember");
 	}
@@ -27,6 +32,6 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public MemberVO InfoMember(int m_num) {
 		return session.selectOne(namespace + ".infoMember", m_num);
-	}
+	}*/
 
 }
