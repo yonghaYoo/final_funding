@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.funding.domain.MyreservationVO;
 
-public class myreservationDAOImpl implements myreservationDAO {
+public class MyreservationDAOImpl implements MyreservationDAO {
 	
 	@Inject
 	private SqlSession session;

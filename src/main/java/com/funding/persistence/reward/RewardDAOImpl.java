@@ -11,7 +11,7 @@ import com.funding.domain.RewardVO;
 
 
 @Repository
-public class rewardDAOImpl implements rewardDAO {
+public class RewardDAOImpl implements RewardDAO {
 
 	@Inject
 	private SqlSession session;
