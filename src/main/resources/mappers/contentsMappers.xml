@@ -8,7 +8,6 @@
 		select * from Contents
 		where c_num = #{c_num}
 	</select>
-	
 	<select id="AllListContents" resultType="ContentsVO" > 
 		select * from Contents
 	 </select>
@@ -22,9 +21,9 @@
 		
 	</insert>
 	
-	<!-- <update id="RemDayContents" parameterType="String">
+	<update id="RemDayContents" parameterType="String">
 		update contents set c_remday = (#{c_dead}-SYSDATE)+1
-	</update> -->
+	</update>
 	
 	<update id="GoalPerContents" parameterType="ContentsVO">
 		update contents set c_goalper = round(#{c_sumprice}/#{c_goal}*100)
