@@ -79,7 +79,7 @@
 				<h1>${Contents.c_title}</h1>
 				<p>${Contents.c_intro }</p>
 			</div>
-			<a href="MovementResAction.do?c_num=${Contents.c_num}">
+			<a href="Funding/FundingPage?c_num=${Contents.c_num}">
 				<div id="fundingbutton">
 					<h1>펀딩하기</h1>
 				</div>

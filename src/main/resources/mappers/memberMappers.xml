@@ -2,22 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.funding.mappers.memberMapper">		
+<mapper namespace="com.funding.mappers.memberMappers">
 	<cache />
-	
-	<select id="listMember" parameterType="int" resultType="MemberVO">
+
+
+
+	<select id="login" resultType="MemberVO">
+		select m_id, m_pw from member
+		where m_id = #{m_id} and m_pw = #{m_pw}
+	</select>
+
+	<!-- <select id="listMember" parameterType="int" resultType="MemberVO">
 		select * from member
 	</select>
-	
-<!-- 	<select id="infoMember" parameterType="int" resultType="MemberVO">
-	select * from member where m_num=#{m_num}마이페이지
-	</select>
-	
-	<select id="infoUpdate" parameterMap="int" resultMap="MemberVO">
-	update Member set m_pw =#{m_pw}, m_email =#{m_email}, m_acc=#{m_acc}, m_add=#{m_add} 
-	</select>
-	<select id="Memberdelete" parameterMap="int">
-	delete from Member where id =#{m_id}
+
+	<select id="infoMember" parameterType="int" resultType="MemberVO">
+		select * from member where m_num=#{m_num}마이페이지
 	</select> -->
 	
+
+	<!-- <select id="infoUpdate" parameterMap="int" resultMap="MemberVO"> update 
+		Member set m_pw =#{m_pw}, m_email =#{m_email}, m_acc=#{m_acc}, m_add=#{m_add} 
+		</select> 
+		
+		<select id="Memberdelete" parameterMap="int"> 
+			delete from Member 
+			where id =#{m_id} 
+		</select> -->
+
 </mapper>

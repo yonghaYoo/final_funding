@@ -27,7 +27,7 @@ public class DetailController {
 	
 	@RequestMapping(value="/Detail",method=RequestMethod.GET)
 	public String Detail(@RequestParam("c_num") int c_num, Model model) {
-		model.addAttribute("Contents", con_service.Detail(c_num));
+		model.addAttribute("Contents", con_service.DetailContents(c_num));
 		
 		List<RewardVO> list = new ArrayList<RewardVO>();
 		list = re_service.DetailRewardList(c_num);

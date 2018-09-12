@@ -6,7 +6,8 @@ import javax.inject.Inject;
 
 import com.funding.domain.RewardVO;
 
-public interface RewardService {
 
-	public List<RewardVO> DetailRewardList(int c_num);
+
+public interface RewardService {
+	public List<RewardVO> DetailRewardList (int c_num);
 }

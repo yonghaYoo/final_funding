@@ -5,12 +5,15 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
-
+import com.funding.domain.RewardVO;
+import com.funding.persistence.reward.RewardDAO;
+import org.springframework.stereotype.Service;
 import com.funding.domain.RewardVO;
 import com.funding.persistence.reward.RewardDAO;
 
-@Repository
+@Service
 public class RewardServiceImpl implements RewardService {
+
 	@Inject
 	private RewardDAO dao;
 	

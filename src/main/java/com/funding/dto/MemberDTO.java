@@ -1,6 +1,8 @@
 package com.funding.dto;
 
-public class MemberDTO {
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable{
 	private String m_id;
 	private String m_pw;
 	
