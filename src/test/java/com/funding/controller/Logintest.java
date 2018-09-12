@@ -23,8 +23,8 @@ public class Logintest {
 	@Test
 	public void test() throws Exception {
 		MemberDTO dto = new MemberDTO();
-		dto.setM_id("bb");
-		dto.setM_pw("bb");
+		dto.setM_id("bhs4645");
+		dto.setM_pw("bhs1111");
 		
 		MemberVO vo = new MemberVO();
 		vo = dao.login(dto);

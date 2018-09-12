@@ -8,17 +8,17 @@
 
 
 	<select id="login" resultType="MemberVO">
-		select m_id, m_pw from member
+		select * from member
 		where m_id = #{m_id} and m_pw = #{m_pw}
 	</select>
 
-	<!-- <select id="listMember" parameterType="int" resultType="MemberVO">
+	 <select id="listMember" parameterType="int" resultType="MemberVO">
 		select * from member
 	</select>
 
 	<select id="infoMember" parameterType="int" resultType="MemberVO">
-		select * from member where m_num=#{m_num}마이페이지
-	</select> -->
+		select * from member where m_num=#{m_num}
+	</select>
 	
 
 	<!-- <select id="infoUpdate" parameterMap="int" resultMap="MemberVO"> update 
