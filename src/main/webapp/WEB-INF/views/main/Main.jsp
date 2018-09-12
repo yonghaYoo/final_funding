@@ -26,7 +26,7 @@
       <c:choose>
       	<c:when test="${member.c_num == null}">
       		<div>
-<<<<<<< HEAD
+
          	<a href="/member/login">
             로그인
             </a>
@@ -35,7 +35,7 @@
       	
          <c:otherwise>
          	<div>
-         	<<a href="/member/logout">
+         	<a href="/member/logout">
             로그아웃
             </a>
             </div>
