@@ -1,5 +1,8 @@
 package com.funding.service.funding;
 
-public interface FundingService {
+import com.funding.domain.FundingVO;
 
+public interface FundingService {
+	
+	public void InsertReFunding(FundingVO funding);
 }

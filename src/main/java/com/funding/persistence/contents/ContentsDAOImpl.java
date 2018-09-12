@@ -25,7 +25,7 @@ public class ContentsDAOImpl implements ContentsDAO {
 
 	@Override
 	public ContentsVO DetailContents(int c_num) {
-		return session.selectOne(namespace + ".DetailContents" );
+		return session.selectOne(namespace + ".DetailContents", c_num);
 	}
 
 	@Override

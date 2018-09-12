@@ -13,9 +13,9 @@
 
 <title>Insert title here</title>
 
-<link rel="stylesheet" type="text/css" href="css/Payment.css">
-<script src="jquery.js" type="text/javascript"></script>
-<script src="jQuery/Payment.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/resources/css/Payment.css">
+<script src="/resources/js/jquery.js" type="text/javascript"></script>
+<script src="/resources/jQuery/Payment.js" type="text/javascript"></script>
 </head>
 <body>
 <!-- 헤더 -->
@@ -74,7 +74,7 @@
 	<!-- 타이틀 -->
 		<section id = "f_title">
 			<div id = "backPage">
-				<img  src="img/back.png">
+				<img  src="/resources/img/back.png">
 				<p>돌아가기</p>
 			</div>
 			<div id ="f_maintitle">
