@@ -14,7 +14,7 @@ import com.funding.domain.ContentsVO;
 import com.funding.service.contents.ContentsService;
 
 @Controller
-@RequestMapping("/Main")
+@RequestMapping("/main")
 public class MainController {
 
 	@Inject

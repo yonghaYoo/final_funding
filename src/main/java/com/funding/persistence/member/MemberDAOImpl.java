@@ -17,7 +17,7 @@ public class MemberDAOImpl implements MemberDAO {
 	@Inject
 	private SqlSession session;
 	
-	private static String namespace = "com.funding.mappers.memberMapper";
+	private static String namespace = "com.funding.mappers.memberMappers";
 
 	@Override
 	public MemberVO login(MemberDTO dto) throws Exception {

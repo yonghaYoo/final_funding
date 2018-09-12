@@ -26,7 +26,7 @@
       <c:choose>
       	<c:when test="${member.c_num == null}">
       		<div>
-         	<a href="MovementLoginAction.do">
+         	<a href="/member/login">
             로그인
             </a>
             </div>
@@ -34,7 +34,7 @@
       	
          <c:otherwise>
          	<div>
-         	<a href="LogoutAction.do">
+         	<a href="/member/logout">
             로그아웃
             </a>
             </div>
