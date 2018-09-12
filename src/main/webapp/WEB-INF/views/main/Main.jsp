@@ -26,7 +26,8 @@
       <c:choose>
       	<c:when test="${member.c_num == null}">
       		<div>
-         	<a href="MovementLoginAction.do">
+<<<<<<< HEAD
+         	<a href="/member/login">
             로그인
             </a>
             </div>
@@ -34,7 +35,7 @@
       	
          <c:otherwise>
          	<div>
-         	<a href="LogoutAction.do">
+         	<<a href="/member/logout">
             로그아웃
             </a>
             </div>
@@ -155,8 +156,7 @@
                <div class="contentsimg">
                   
 
-                  <a href="MovementDetailAction.do?c_num=${Contents.c_num}"><img src="/resources/receiveimg/${Contents.c_thimg}"></a>
-
+                  <a href="MovementDetailAction.do?c_num=${Contents.c_num}"><img src="receiveimg/${Contents.c_thimg}"></a>
                   <!-- img경로 설정 -->
                </div>
                <div class="contentstext">
