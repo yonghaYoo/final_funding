@@ -37,4 +37,10 @@ public class MemberServiceImpl implements MemberService {
 		dao.infoUpdate(member);
 	}
 
+	@Override
+	public void Memberdelete(int m_num) throws Exception {
+		dao.Memberdelete(m_num);
+	}
+
+	
 }

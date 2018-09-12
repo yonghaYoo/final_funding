@@ -15,4 +15,7 @@ public interface MemberDAO {
 	public MemberVO InfoMember(int m_num);
 	
 	public void infoUpdate(MemberVO vo) throws Exception;
+	
+	public void Memberdelete(int m_num) throws Exception;
+
 }

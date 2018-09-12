@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,6 +40,19 @@ public class MypageController {
 		service.infoUpdate(member);
 		rttr.addFlashAttribute("msg","Success");
 		return "redirect:/Mypage";
+	}
+	
+	@RequestMapping(value="/Mypage/memberDelete", method=RequestMethod.GET)
+	public String Memberdelete(@RequestParam("m_num") int m_num,RedirectAttributes rttr,HttpServletRequest request) throws Exception{
+		service.Memberdelete(m_num);
+		
+		HttpSession session = request.getSession();
+		session.removeAttribute("member");
+		
+		rttr.addFlashAttribute("delete", "deleteok");
+		
+		return "redirect:/main/Main";
+		
 	}
 }
 
