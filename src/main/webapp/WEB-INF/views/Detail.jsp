@@ -9,7 +9,8 @@
 <link href="https://fonts.googleapis.com/css?family=Gothic+A1:700&amp;subset=korean" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="css/Detail.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/Detail.css">
+
 <title>Insert title here</title>
 </head>
 <body>

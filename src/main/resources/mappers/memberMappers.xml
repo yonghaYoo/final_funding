@@ -5,13 +5,19 @@
 <mapper namespace="com.funding.mappers.memberMapper">		
 	<cache />
 	
-	<select id="listMember"  resultType="MemberVO">
+	<select id="listMember" parameterType="int" resultType="MemberVO">
 		select * from member
 	</select>
 	
-	<select id="infoMember" parameterType="int" resultType="MemberVO">
-	select * from member where m_num=#{m_num}<!-- 마이페이지 -->
+<!-- 	<select id="infoMember" parameterType="int" resultType="MemberVO">
+	select * from member where m_num=#{m_num}마이페이지
 	</select>
 	
+	<select id="infoUpdate" parameterMap="int" resultMap="MemberVO">
+	update Member set m_pw =#{m_pw}, m_email =#{m_email}, m_acc=#{m_acc}, m_add=#{m_add} 
+	</select>
+	<select id="Memberdelete" parameterMap="int">
+	delete from Member where id =#{m_id}
+	</select> -->
 	
 </mapper>

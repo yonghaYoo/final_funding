@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.funding.domain.ContentsVO;
+import com.funding.domain.RewardVO;
 import com.funding.persistence.contents.ContentsDAO;
 
 @Service
@@ -67,7 +68,6 @@ public class ContentsServiceImpl implements ContentsService {
 	public ContentsVO Detail(int c_num) {
 		return dao.DetailContents(c_num);
 	}
-
 	
 	
 	
