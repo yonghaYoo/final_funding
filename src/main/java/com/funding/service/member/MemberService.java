@@ -14,4 +14,6 @@ public interface MemberService {
 	public MemberVO InfoMember(int m_num);
 
 	public MemberVO login(MemberDTO dto) throws Exception;
+	
+	public void infoUpdate(MemberVO member) throws Exception;
 }

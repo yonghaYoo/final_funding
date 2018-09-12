@@ -21,13 +21,14 @@
 	</select>
 	
 
-	<!-- <select id="infoUpdate" parameterMap="int" resultMap="MemberVO"> update 
-		Member set m_pw =#{m_pw}, m_email =#{m_email}, m_acc=#{m_acc}, m_add=#{m_add} 
+	<select id="infoUpdate" parameterType="MemberVO"> 
+	select * from member where m_num=#{m_num}
+	update 	Member set m_pw =#{m_pw}, m_email =#{m_email}, m_acc=#{m_acc}, m_add=#{m_add} 
 		</select> 
 		
-		<select id="Memberdelete" parameterMap="int"> 
+	<!-- 	<select id="Memberdelete" parameterMap="int"> 
 			delete from Member 
 			where id =#{m_id} 
-		</select> -->
+		</select>  -->
 
 </mapper>

@@ -123,7 +123,6 @@
 		</div>
 	</c:forEach>
 	<div id = "ShareFunding">
-		<div>공유하기</div><br>
 		<div>자세히 보기</div><br>
 	</div>	
 	

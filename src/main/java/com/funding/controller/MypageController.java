@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.funding.domain.MemberVO;
 import com.funding.service.member.MemberService;
@@ -31,4 +32,12 @@ public class MypageController {
 		
 		return "/Mypage";
 	}
+	
+	@RequestMapping(value="/Mypage", method=RequestMethod.POST)
+	public String inforUpdatePOST(MemberVO member, RedirectAttributes rttr) throws Exception{
+		service.infoUpdate(member);
+		rttr.addFlashAttribute("msg","Success");
+		return "redirect:/Mypage";
+	}
 }
+
