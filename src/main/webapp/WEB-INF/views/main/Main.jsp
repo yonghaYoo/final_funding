@@ -155,7 +155,7 @@
                <div class="contentsimg">
                   
 
-                  <a href="MovementDetailAction.do?c_num=${Contents.c_num}"><img src="receiveimg/${Contents.c_thimg}"></a>
+                  <a href="MovementDetailAction.do?c_num=${Contents.c_num}"><img src="/resources/receiveimg/${Contents.c_thimg}"></a>
 
                   <!-- img경로 설정 -->
                </div>
