@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.funding.domain.MemberVO;
+import com.funding.domain.MyreservationVO;
+import com.funding.service.Myreservation.MyreservationService;
 import com.funding.service.member.MemberService;
 
 @Controller
@@ -23,14 +25,23 @@ public class MypageController {
 	@Inject
 	private MemberService service;
 	
+	@Inject
+	private MyreservationService myres_service;
+	
 	@RequestMapping(value="/Mypage",method=RequestMethod.GET)
 	public String InfoMember(@RequestParam("m_num") int m_num,Model model){
 		
 		MemberVO member = new MemberVO();
+		List<MyreservationVO> mylist = new ArrayList<MyreservationVO>();
+		
+		mylist = myres_service.GetMyres(m_num);
 		
 		member = service.InfoMember(m_num);
 		
 		model.addAttribute("m_info",member);
+		
+		model.addAttribute("myres",mylist);
+		
 		
 		return "/Mypage";
 	}
@@ -54,5 +65,6 @@ public class MypageController {
 		return "redirect:/main/Main";
 		
 	}
+
 }
 

@@ -7,12 +7,12 @@
 	
 	<select id="getMyres" parameterType="int" resultType="MyreservationVO">
 	
-	SELECT c.c_title, c.c_intro, f.f_resday, f.f_price
+	SELECT c.c_title, c.c_intro, f.f_resday, f.f_price, c.c_dead
 	from funding f, member m,contents c
 	where f.m_num = m.m_num 
 	and c.c_num = f.c_num
 	and m.m_num=#{m_num}
-	
+
 	
 	</select>
 	

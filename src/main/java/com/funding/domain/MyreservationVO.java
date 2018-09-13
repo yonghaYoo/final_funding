@@ -7,16 +7,24 @@ public class MyreservationVO implements Serializable {
 	private String c_intro;
 	private String f_resday;
 	private int f_price;
+	private String c_dead;
 	
-	MyreservationVO(){}
+	public MyreservationVO(){}
 
-	public MyreservationVO(String c_title, String c_intro, String f_resday, int f_price) {
+	
+	
+	
+	public MyreservationVO(String c_title, String c_intro, String f_resday, int f_price, String c_dead) {
 		super();
 		this.c_title = c_title;
 		this.c_intro = c_intro;
 		this.f_resday = f_resday;
 		this.f_price = f_price;
+		this.c_dead = c_dead;
 	}
+
+
+
 
 	public String getC_title() {
 		return c_title;
@@ -49,6 +57,21 @@ public class MyreservationVO implements Serializable {
 	public void setF_price(int f_price) {
 		this.f_price = f_price;
 	}
+
+	public String getC_dead() {
+		return c_dead;
+	}
+
+	public void setC_dead(String c_dead) {
+		this.c_dead = c_dead;
+	}
+
+	@Override
+	public String toString() {
+		return "MyreservationVO [c_title=" + c_title + ", c_intro=" + c_intro + ", f_resday=" + f_resday + ", f_price="
+				+ f_price + ", c_dead=" + c_dead + "]";
+	}
+
 	
 	
 }
