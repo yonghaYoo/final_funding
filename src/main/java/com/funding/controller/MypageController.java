@@ -25,4 +25,9 @@ public class MypageController {
 		
 		return "/Mypage";
 	}
+	
+	@RequestMapping(value="/reMyPage", method=RequestMethod.GET)
+	public void reMyInfo(){
+		
+	}
 }

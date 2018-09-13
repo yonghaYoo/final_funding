@@ -34,7 +34,7 @@ public class MemberController {
 		if(vo==null){
 			return ;
 		}
-		
+		System.out.println("넘버"+vo.getM_add());
 		model.addAttribute("member", vo);
 		
 	}

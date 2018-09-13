@@ -32,7 +32,7 @@ public class DetailController {
 		List<RewardVO> list = new ArrayList<RewardVO>();
 		list = re_service.DetailRewardList(c_num);
 		
-		model.addAttribute("list", list);
+		model.addAttribute("list2", list);
 		
 		return "Detail";
 	}

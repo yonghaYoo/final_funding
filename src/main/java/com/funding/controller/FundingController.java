@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.funding.domain.ContentsVO;
 import com.funding.domain.FundingVO;
+import com.funding.domain.MemberVO;
 import com.funding.domain.RewardVO;
 import com.funding.service.contents.ContentsService;
 import com.funding.service.funding.FundingService;
@@ -32,17 +35,30 @@ public class FundingController {
 	private FundingService fun_service;
 	
 	@RequestMapping(value="/FundingPage",method=RequestMethod.GET)
-	public void FundingPage(@RequestParam("c_num") int c_num, Model model){
+	public String FundingPage(@RequestParam("c_num") int c_num, Model model, HttpServletRequest request){
 		ContentsVO contents = new ContentsVO();
 		
-		contents = con_service.DetailContents(c_num);
+		HttpSession session = request.getSession();
 		
-		List<RewardVO> list = new ArrayList<RewardVO>();
+		if(session.getAttribute("member") != null){
+			contents = con_service.DetailContents(c_num);
 		
-		list = re_service.DetailRewardList(c_num);
+			List<RewardVO> list = new ArrayList<RewardVO>();
+			
+			list = re_service.DetailRewardList(c_num);
 		
-		model.addAttribute("list", list);
-		model.addAttribute("Contents", contents);
+			model.addAttribute("list", list);
+			model.addAttribute("Contents", contents);
+			
+			return "/Funding/FundingPage";
+			
+		}else {
+			return "/member/login";
+		}
+		
+		
+		
+		
 		
 	}
 	
@@ -51,7 +67,7 @@ public class FundingController {
 		
 		fun_service.InsertReFunding(funding);
 		
-		return "a";
+		return "/main/Main";
 	}
 	
 }

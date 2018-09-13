@@ -10,9 +10,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.funding.domain.MemberVO;
+
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	
-	private static final String LOGIN = "member";
 	private static final Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 	
 	@Override
@@ -25,7 +26,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		System.out.println(modelMap.get("member"));
 		
 		if(MemberVO != null){
-			session.setAttribute(LOGIN, MemberVO);
+			session.setAttribute("member", MemberVO);
+			System.out.println("oo");
+			
+			
 			Object dest = session.getAttribute("dest");
 			response.sendRedirect(dest != null ? (String)dest:"/main");
 			System.out.println("bb");
@@ -39,8 +43,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		HttpSession session = request.getSession();
 		System.out.println("cc");
 		
-		if(session.getAttribute(LOGIN) != null){
-			session.removeAttribute(LOGIN);
+		if(session.getAttribute("member") != null){
+			session.removeAttribute("member");
 			System.out.println("dd");
 		}
 		return true;

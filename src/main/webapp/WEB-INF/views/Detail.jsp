@@ -17,7 +17,7 @@
 	<!-- 헤더 -->
    <header>
       <div id="title">
-      <a href="AllListContentsAction.do"><h3>프로젝트명</h3></a>
+      <a href="/main"><h3>프로젝트명</h3></a>
       </div>
       
       <div id="loginList">
@@ -74,7 +74,7 @@
 	
 	<section id="first">
 		<div id ="mainImage">
-			<img src="receiveimg/${Contents.c_topimg }">
+			<img src="/resources/receiveimg/${Contents.c_topimg }">
 			<div id="mainText">
 				<h1>${Contents.c_title}</h1>
 				<p>${Contents.c_intro }</p>
@@ -130,7 +130,7 @@
 		
 		</div>
 		<div id="img">
-			<img  src="receiveimg/${Contents.c_midimg }">
+			<img  src="/resources/receiveimg/${Contents.c_midimg }">
 		</div>
 	</section>
 	

@@ -6,13 +6,13 @@ import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.funding.domain.ContentsVO;
@@ -23,19 +23,33 @@ import com.funding.service.contents.ContentsService;
 @RequestMapping("/Contents")
 public class ContentsController {
 	
-	/*@Resource(name = "uploadPath")
-	private String uploadPath;*/
+	@Resource(name = "uploadPath")
+	private String uploadPath;
 	
 	@Inject
 	private ContentsService service;
 	
-	
-	public void AddContents(@RequestParam("c_num") int c_num,Model model){
-
+	@RequestMapping(value="/AddContents", method=RequestMethod.GET)
+	public String AddContents(HttpServletRequest request){
+		System.out.println(uploadPath);
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("member")!=null){
+			
+			
+			
+			
+			return "/Contents/AddContents";
+		}else{
+			
+			return "member/login";
+		}
+		
+		
 	}
 	
 	
-	/*@RequestMapping(value="/AddContents", method=RequestMethod.POST)
+	@RequestMapping(value="/AddContents", method=RequestMethod.POST)
 	public void AddContents(ContentDTO dto) throws IOException, Exception{
 		MultipartFile midimg = dto.getC_midimg();
 		String midimgName = uploadFile(midimg.getOriginalFilename(), midimg.getBytes());
@@ -74,5 +88,5 @@ public class ContentsController {
 		FileCopyUtils.copy(fileData, target);
 		
 		return savedName;
-	}*/
+	}
 }

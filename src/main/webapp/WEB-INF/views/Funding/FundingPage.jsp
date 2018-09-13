@@ -98,7 +98,7 @@
 	<!-- 상단 인디케이터 끝 -->
 	
 	<!--  리워드 선택 시작-->
-	<form action="InsertReFundingAction.do" method="post">
+	<form action="/Funding/FundingPage" method="post">
 		<section id ="selectReward">
 				
 				<h2>리워드 선택</h2>
@@ -238,12 +238,13 @@
 				</div>
 					
 					<div id="paysubmit">
-						<div id ="back">돌아가기</div>
-						<a href="InsertReFundingAction.do">
+					
+							<div id ="back">돌아가기</div>
+						
 						<input type="submit" value="결제 예약하기" id="paysubm">
-						<input type="hidden" value="${member.m_num }" name="m_num">
+						<input type="hidden" value="${member.m_num}" name="m_num">
 						<input type="hidden" value="${Contents.c_num }" name="c_num">
-						</a>
+						
 					</div>
 			</section>
 		</section>

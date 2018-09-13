@@ -7,12 +7,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/addContents.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/addContents.css">
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Gothic+A1:700&amp;subset=korean"
         rel="stylesheet">
-<script src="jquery.js" type="text/javascript"></script>
-<script src="jQuery/addContents.js" type="text/javascript"></script>
+<script src="/resources/js/jquery.js" type="text/javascript"></script>
+<script src="/resources/jQuery/addContents.js" type="text/javascript"></script>
 </head>
 <body>
 	<!-- 헤더 -->
@@ -91,7 +91,7 @@
 	<!-- 기본정보 -->
 		
 			<div id = "basicInfoWrap">
-				<form action="InsertContentsAction.do" method="post" enctype="multipart/form-data">
+				<form action="/Contents/AddContents" method="post" enctype="multipart/form-data">
 				<div class="info">
 					<h2>프로젝트 제목</h2>
 					<div>프로젝트를 잘 나타내거나 흥미를 갖게 할 수 있는 멋진 제목을 입력해보세요. <br>
@@ -208,7 +208,7 @@
 				</div>
 				
 				<div class="delete">
-					<img src="img/delete.png">
+					<img src="/resources/img/delete.png">
 				</div>
 
 				<div class="resubmit">

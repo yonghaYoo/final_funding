@@ -3,10 +3,13 @@ package com.funding.service.member;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
 import com.funding.domain.MemberVO;
 import com.funding.dto.MemberDTO;
 import com.funding.persistence.member.MemberDAO;
-
+@Service
 public class MemberServiceImpl implements MemberService {
 
 	@Inject

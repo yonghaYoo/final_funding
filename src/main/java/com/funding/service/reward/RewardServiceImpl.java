@@ -22,4 +22,11 @@ public class RewardServiceImpl implements RewardService {
 		return dao.DetailRewardList(c_num);
 	}
 
+	@Override
+	public void InsertReward(RewardVO reward) {
+		dao.InsertReward(reward);
+	}
+
+	
+	
 }
