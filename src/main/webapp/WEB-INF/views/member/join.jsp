@@ -61,12 +61,13 @@
    <!-- 헤더 끝 -->
    
    <!-- 본문 시작 -->
-   		<form action="/member/join" method="get">
-			아이디 : <input type="text" name="m_id"> <br>
+   		<form action="/member/join" method="post">
+			아이디 : <input type="text" name="m_id"> 
+				   <input type="submit" value="중복확인"><br>
 			비밀번호 : <input type="password" name="m_pw"><br>
 			이름 : <input type="text" name="m_name"> <br>
 			핸드폰 번호 : <input type="text" name="m_pno"> <br>
-			e-mail : <input type="text" name="m_email"> <br>
+			e-mail : <input type="text" name="m_email" placeholder="aa@example.com"> <br>
 			계좌번호 : <input type="text" name="m_acc"> <br>
 			주소 : <input type="text" name="m_add"> <br>
 		<input type="submit" value="회원가입">

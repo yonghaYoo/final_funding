@@ -14,4 +14,6 @@ public interface MemberDAO {
 	
 	public MemberVO InfoMember(int m_num);
 	
+	public void join(MemberVO vo)throws Exception;
+	
 }

@@ -34,4 +34,11 @@ public class MemberDAOImpl implements MemberDAO {
 		return session.selectOne(namespace + ".infoMember", m_num);
 	}
 
+	@Override
+	public void join(MemberVO vo) throws Exception {
+		session.insert(namespace+".join", vo);	
+	}
+
+	
+	
 }

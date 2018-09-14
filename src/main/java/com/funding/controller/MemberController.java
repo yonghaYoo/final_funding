@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +20,9 @@ import com.funding.service.member.MemberService;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+	
 	@Inject
 	private MemberService service;
 	
@@ -52,6 +57,18 @@ public class MemberController {
 		}
 		
 		return "member/logout";
+	}
+	
+	@RequestMapping(value="/join", method=RequestMethod.GET)
+	public void joinGET(MemberVO member, Model model)throws Exception{
+	}
+	
+	@RequestMapping(value="/join", method = RequestMethod.POST)
+	public String joinPOST(MemberVO member, Model model)throws Exception{
+		service.join(member);
+		model.addAttribute("result", "joinsuccess");
+		
+		return "member/joinsuccess";
 	}
 	
 }

@@ -32,4 +32,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.login(dto);
 	}
 
+	@Override
+	public void join(MemberVO member) throws Exception {
+		dao.join(member);
+	}
+	
 }
