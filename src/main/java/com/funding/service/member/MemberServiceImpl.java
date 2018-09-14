@@ -42,5 +42,6 @@ public class MemberServiceImpl implements MemberService {
 		dao.Memberdelete(m_num);
 	}
 
+
 	
 }

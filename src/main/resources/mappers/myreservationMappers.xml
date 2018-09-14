@@ -11,9 +11,24 @@
 	from funding f, member m,contents c
 	where f.m_num = m.m_num 
 	and c.c_num = f.c_num
+	and f_payment=0
 	and m.m_num=#{m_num}
-
 	
 	</select>
 	
+	<select id="delectFunding" parameterType="int">
+	delete from funding 
+	where m_num =#{m_num} 
+	</select>
+	
+	<select id="myPayment" parameterType="int" resultType="MyreservationVO">
+	SELECT c.c_title, c.c_intro, f.f_price,f.f_resday
+	from funding f, member m,contents c
+	where f.m_num = m.m_num
+	and c.c_num = f.c_num
+	and f.f_payment=1
+	and m.m_num=#{m_num}
+	
+	
+	</select>
 </mapper>

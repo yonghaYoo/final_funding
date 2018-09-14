@@ -21,4 +21,18 @@ public class MyreservationServiceImpl implements MyreservationService {
 		return dao.GetMyres(m_num);
 	}
 
+	@Override
+	public void delectFunding(int m_num) throws Exception {
+		dao.delectFunding(m_num);
+		
+	}
+
+	@Override
+	public List<MyreservationVO> myPayment(int m_num) {
+		
+		return dao.myPayment(m_num);
+	}
+	
+	
+
 }

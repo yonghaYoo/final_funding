@@ -19,4 +19,5 @@ public interface MemberService {
 	
 	public void Memberdelete(int m_num)throws Exception;
 
+
 }

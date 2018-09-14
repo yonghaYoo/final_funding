@@ -14,22 +14,23 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.funding.domain.MyreservationVO;
 import com.funding.persistence.MyreservationDAO;
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations ={"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
-public class MyresTest {
+@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/**/root-context.xml" })
+
+public class mypagePaymentTest {
 
 	@Inject
-	MyreservationDAO dao;
-	
+	private MyreservationDAO dao;
+
 	@Test
 	public void test() {
+
 		int m_num = 1002;
-		
 		List<MyreservationVO> list = new ArrayList<MyreservationVO>();
-		
-		list = dao.GetMyres(m_num);
-		
-		System.out.println(list.get(0).getC_intro());
+
+		list = dao.myPayment(m_num);
+		System.out.println(list.get(0).getC_title());
 		
 	}
 

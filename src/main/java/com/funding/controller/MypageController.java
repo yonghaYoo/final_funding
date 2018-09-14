@@ -65,6 +65,28 @@ public class MypageController {
 		return "redirect:/main/Main";
 		
 	}
+	
+	@RequestMapping(value="/Mypage/deleteFunding",method=RequestMethod.GET)
+	public String delectFunding(@RequestParam("m_num") int m_num)throws Exception{
+		myres_service.delectFunding(m_num);
+		
+		
+		return "/Mypage";
+		
+	}
+	
+	@RequestMapping(value="/Mypage/myPayment", method=RequestMethod.GET)
+	public String myPament(@RequestParam("m_num") int m_num,Model model)throws Exception{
+		
+		List<MyreservationVO> myPayment = new ArrayList<MyreservationVO>();
+		
+		myPayment=myres_service.myPayment(m_num);
+		
+		model.addAttribute("myPay",myPayment);
+		
+		return "/Mypage";
+		
+	}
 
 }
 

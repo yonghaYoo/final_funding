@@ -21,7 +21,19 @@ public class MyreservationDAOImpl implements MyreservationDAO {
 	public List<MyreservationVO> GetMyres(int m_num) {
 		return session.selectOne(namespace + ".getMyres", m_num);
 	}
-	
+
+	@Override
+	public void delectFunding(int m_num) throws Exception {
+		session.delete(namespace + ".delectFunding",m_num);
+	}
+
+	@Override
+	public List<MyreservationVO> myPayment(int m_num) {
+		return session.selectList(namespace +".myPayment",m_num);
+	}
+
+
+
 	
 
 }

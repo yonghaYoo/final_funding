@@ -15,4 +15,5 @@ public interface ContentsDAO {
 	public void InsertContents(ContentsVO contents);
 	
 	public void GoalPerContents(ContentsVO contents);
+	
 }
