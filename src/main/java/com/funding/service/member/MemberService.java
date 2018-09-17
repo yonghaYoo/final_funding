@@ -16,4 +16,6 @@ public interface MemberService {
 	public MemberVO login(MemberDTO dto) throws Exception;
 	
 	public void join(MemberVO member)throws Exception;
+	
+	public int idcheck(String m_id);
 }

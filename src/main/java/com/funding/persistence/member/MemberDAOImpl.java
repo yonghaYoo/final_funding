@@ -39,6 +39,12 @@ public class MemberDAOImpl implements MemberDAO {
 		session.insert(namespace+".join", vo);	
 	}
 
+	@Override
+	public int idcheck(String m_id) {
+		return session.selectOne(namespace+".idcheck", m_id);
+	}
+
+	
 	
 	
 }
