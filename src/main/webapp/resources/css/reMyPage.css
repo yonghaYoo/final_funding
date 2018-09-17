@@ -2,59 +2,841 @@
 
 body {
 	margin: 0 auto;
-	width:100%;
+	width: 100%;
+	font-family:'Nanum Gothic', sans-serif;
 }
-	header{
-		width:100%;
-		height: 80px;
-		position: fixed;
-		background-color: white;
-		box-shadow: 0px 0px 15px -5px #8a8a8a;
-		float:left;
-	}
-	
-a{
-	text-decoration: none;
-	color:black;
-}	
-	header #title{
-		font-size: 25px;
-		display:inline-block;
-		margin-top: 20px;
-		margin-left: 20px;
-	}
-	
-	#title h3{
-		display: inline;
-	}
-	
-	header #loginList{
-		float:right;
-		width: 350px;
-		height: 40px;
-		margin-top:20px;
-		margin-right:30px;
-		padding: 0;
-	}
-	
-	#loginList div{
-		width: 100px;
-		height: 40px;
-		margin: 0;
-		text-align: center;
-		float: left;
-		padding-top: 10px;
-	}
-	
-	#loginList div:last-child {
-	/* background: #32805a; */
-	border:3px solid #14a085;
-	height: 33px;
-	transition:0.3s;
-}	
 
-#loginList div:last-child:hover{
+header {
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	background-color: white;
+	box-shadow: 0px 0px 15px -5px #8a8a8a;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+input[type="text"]{
+	background-image:url("../resources/img/textbox.png");
+	width:215px;
+	height:30px;
+	border: none;
+	border-bottom: 3px solid #14a085;
+	outline-width: 0;
+	transition:0.3s;
+}
+
+input[type="text"]:focus{
+	box-shadow: 0px 10px 10px #e8e8e8;
+}
+
+header #title {
+	font-size: 25px;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#title h3 {
+	display: inline;
+}
+
+header #loginList {
+	float: right;
+	width: 350px;
+	height: 40px;
+	margin-top: 20px;
+	margin-right: 30px;
+	padding: 0;
+}
+
+#loginList div {
+	width: 100px;
+	height: 40px;
+	margin: 0;
+	text-align: center;
+	float: left;
+	padding-top: 10px;
+}
+
+#loginList div:last-child {
+	/* background: #32805a; */
+	border: 3px solid #14a085;
+	height: 33px;
+	transition: 0.3s;
+}
+
+#loginList div:last-child:hover {
 	background-color: #14a085;
-	color:white;
+	color: white;
 	border-radius: 30px 30px 30px 30px;
 }
+
+
+
+
+												/* 내정보 시작 */
+#myInfo{
+	width:100%;
+	background-color: red;
+	margin-top:80px;
+	float: right;
+}
+
+#myInfowrap{
+	width:80%;
+	margin:0 auto;
+	background-color: white;
+	padding: 30px;
+}
+
+#myInfowrap h2{
+	display: inline-block;
+	font-size: 36px;
+	font-weight:normal;
+	/* font-family: 'Noto Serif KR', sans-serif; */
+	
+}
+
+#myInfowrap h2 b{
+	font-size: 60px;
+	 font-family: 'Noto Sans KR', sans-serif; 
+	 color: #14a085;
+}
+
+#myInfowrap #moreInfo{
+	display: inline-block;
+	margin-left: 120px;
+	margin-bottom:20px;
+	border-radius: 50px;
+	background-color:#14a085;
+	font-size:7px;
+	text-align: center;
+	width:40px;
+	height: 40px;
+	color:white;
+	transition:0.3s;
+	float:left;
+}
+
+#myInfowrap #moreInfo div{
+	height:13px;
+}
+
+
+#myInfowrap #moreInfo:hover{
+	padding:20px;
+}
+
+#detailmyInfo{
+	display: block;
+	font-size: 20px;
+	color:gray;
+	margin-left: 10.5%;
+	/* height: 100%; */
+	display: none;							/* 디테일정보 안보임 */
+	transition:1s;
+}
+
+#detailmyInfo b{
+	color:#14a085;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#detailmyInfo div{
+	display: inline-block;
+	margin-top: 30px;
+	transition:0.3s;
+}
+
+#detailmyInfo div:hover{
+	color:#14a085;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#detailmyInfo #myInfoRemove{
+	margin-left: 20px;
+}
+
+
+#menu2{
+	background-color: white;
+	width: 100%;
+	height:100%;
+}
+
+#menuwrap{
+	width:83.2%;
+	margin: 0 auto;
+	background-color: white;
+	margin-bottom: 20px;
+}
+
+#menuwrap div{
+	display: inline-block;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	font-size: 20px;
+	transition:0.3s;
+}
+
+#menuwrap div:hover{
+	color:#14a085;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#menuwrap div div{
+	height: 30px;
+	width: 100%;
+}
+
+#menuwrap div div:hover{
+	border-bottom: none;
+}
+
+
+												/* 내 정보 끝 */
+
+												/* 예약리스트 시작 */
+#myresList{
+	width:100%;
+	background-color: #f8f8f8;
+	float:left;
+	display: none;								/* 예약리스트 안보이게 */
+	padding-bottom:50px;
+	height: 100%;
+}
+
+#myresListwrap{
+	width:80%;
+	margin:0 auto;
+	background-color: #f8f8f8;
+}
+
+.myres{
+	width:65%;
+	height:230px;
+	margin:0 auto;
+	margin-top:30px;
+	padding:30px;
+	background: white;
+	box-shadow: 0px 0px 15px -5px #8a8a8a;
+	border-radius: 20px;
+}
+
+.myresTitle{
+	float:left;
+	width:80%;
+	height: 150px;
+}
+
+.myresTitle h4{
+	font-size: 24px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	color:#14a085;
+	margin: 10px 0 10px 0;
+	font-weight: normal;
+}
+
+.myresSetbtn{
+	float:left;
+	width:20%;
+	height: 150px;
+	
+}
+
+.myresSetbtn div{
+	margin-bottom: 20px;
+	width: 80%;
+	height: 30px;
+	margin-left: 20%;
+}
+
+.myresSetbtn div:FIRST-CHILD{
+	margin-top: 20px;
+}
+
+ .myres hr{
+	width:80%;
+	margin-right:20%;;
+} 
+
+.re_resDay{
+	float:left;
+	margin-right: 80px;	
+}
+
+.re_resDay p:LAST-CHILD{
+	font-size: 18px;
+	color:#14a085; 
+}
+
+.re_payday{
+	float:left;
+	margin-right: 80px;	
+}
+
+.re_payday p:LAST-CHILD{
+	font-size: 18px;
+	color:#14a085; 
+}
+
+.re_resPrice{
+	float:left;
+	margin-right: 80px;	
+}
+
+.re_resPrice p:LAST-CHILD{
+	font-size: 18px;
+	color:#14a085; 
+}	
+												/* 예약목록 끝 */
+
+												/* 결제리스트 시작 */
+#myPayList{
+	width:100%;
+	background-color: #f8f8f8;
+	float:left;
+	display: none;								/* 결제리스트 안보이게 */
+	padding-bottom: 50px;
+	height: 100%;
+}
+
+#myPayListwrap{
+	width:80%;
+	margin:0 auto;
+	background-color: #f8f8f8;
+}
+
+.myPay{
+	width:52%;
+	height:230px;
+	margin:0 auto;
+	margin-top:30px;
+	padding:30px;
+	background: white;
+	box-shadow: 0px 0px 15px -5px #8a8a8a;
+	border-radius: 20px;
+}
+
+.myPayTitle{
+	width:100%;
+	height:150px;
+	float:left;
+}
+
+.myPayTitle h4{
+	font-size: 24px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	color:#14a085;
+	margin: 10px 0 10px 0;
+	font-weight: normal;
+}
+
+.pa_resDay{
+	flaot:left;
+	margin-right: 80px;
+	display: inline-block;
+}
+
+.pa_resDay p:LAST-CHILD{
+	font-size: 18px;
+	color:#14a085; 
+}
+
+.pa_payday{
+	flaot:left;
+	margin-right: 80px;
+	display: inline-block;
+}
+
+.pa_payday p:LAST-CHILD{
+	font-size: 18px;
+	color:#14a085; 
+}
+
+.pa_resPrice{
+	flaot:left;
+	margin-right: 80px;
+	display: inline-block;
+}
+
+.pa_resPrice p:LAST-CHILD{
+	font-size: 18px;
+	color:#14a085; 
+}
+										/* 결제리스트 끝 */
+										
+										/* 컨텐츠 없을때 */
+#noContents{
+	width:100%;
+	background-color: #f8f8f8;
+	float:left;
+	height: 500px;
+	display: none;								/* 컨텐츠 없음 페이지 안보이게 */
+}			
+
+#noContentsWrapper{
+	width:80%;
+	margin:0 auto;
+	background-color: #f8f8f8;
+}				
+
+#noContentsWrapper h2{
+	margin-top:200px;
+	text-align: center;
+}
+#noContentsWrapper div{
+	margin: 0 auto;
+	width:10%;
+	height:50px;
+	text-align:center;
+	background-color: #14a085;
+	color:white;
+	font-weight: bold;
+	font-size: 20px;
+}	
+
+#noContentsWrapper div div{
+	height:10px;
+	width:100%;
+}						
+												/* 컨텐츠 없을때 끝 */	
+												
+												/* 승인대기중컨텐츠 */
+#myContents{
+	width:100%;
+	background-color: #f8f8f8;
+	float:left;
+}												
+			
+#myContentsWrapper{
+	width:80%;
+	margin:0 auto;
+	background-color: #f8f8f8;
+}														
+
+#myContntetsTop{
+	width:100%;
+	padding-bottom: 50px;
+	
+}	
+
+#myContntetsTop h3{
+	margin-left:20%;
+	font-size: 36px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	color:#14a085;
+}					
+
+#watingContnents{
+	width:60%;
+	background-color: white;
+	height: 225px;
+	margin:0 auto;
+	box-shadow: 0px 0px 15px -5px #8a8a8a;
+	border-radius: 20px;
+}		
+
+#watingContnents img{
+	display: inline-block;
+	float: left;
+}
+
+
+#watingContentsText{
+	display:inline-block;
+	margin-left: 10%;
+	width:55%;
+	height: 100%;
+}	
+
+#ContentsTitle{
+	width:80%;
+	height: 150px;
+	float:left;
+}	
+
+#ContentsTitle p:FIRST-CHILD{
+	font-size: 24px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	color:#14a085;
+	margin-bottom: 10px;
+}
+
+#ContentsTitle p:LAST-CHILD{
+	margin:0;
+}
+
+#ContentsModify{
+	margin-top:30px;
+	width:20%;
+	height:120px;
+	float:left;
+}
+
+#var{
+	width:80%;
+	background-color: #a8a8a8;
+	float:left;
+	height: 5px;
+	margin-right: 20%;
+}
+
+#innervar{
+	width:32%;
+	height:100%;
+	background-color: #14a085;
+}
+
+#ContentsNumbering{
+	float: left;
+	display: inline-block;
+	width:100%;
+}
+
+#ContentsNumbering h4{
+	display: inline-block;
+	margin-right: 5%;
+	color:#14a085;
+	font-size: 24px;
+	margin-top:5px;
+}
+
+#ContentsNumbering p{
+	display: inline-block;
+}
+
+#ContentsNumbering p:LAST-CHILD {
+	float: right;
+	margin-right: 20%;
+}
+												/* 승인대기중컨텐츠 끝*/
+												/* 승인대기중 리워드 */
+.waitingReward{
+	width:60%;
+	background-color: white;
+	height: 100%;
+	margin:0 auto;
+	box-shadow: 0px 0px 15px -5px #8a8a8a;
+	margin-top:30px;
+}
+
+
+.WRTop{
+	width:100%;
+	height: 200px;
+}
+
+.WRText{
+	width:77.75%;
+	height: 100%;
+	float:left;
+	padding-left: 20px;
+}
+
+.WRText h4{
+	font-size: 18px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	color:#14a085;
+	margin-bottom: 10px;
+}
+
+.WRText h4:FIRST-CHILD{
+	font-size: 20px;
+	margin-top:10px;
+}
+
+.WRText h4:LAST-CHILD{
+	margin-top:50px;
+	
+}
+
+.WRRight{
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.WRRight div{
+	margin-top:20px;
+	margin-left:37%;
+}
+
+.WRbottom{
+	padding:20px;
+	display: none;								/* 리워드수정창 안보임 */
+}
+
+.WRbottom h4{
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.WRbottom h4:FIRST-CHILD{
+	margin-top:50px;
+}
+
+.WRbottom input[type="text"]:NTH-CHILD(6){
+	
+	background-image:url("../resources/img/textbox.png");
+	width:600px;
+	height:30px;
+	border: none;
+	border-bottom: 3px solid #14a085;
+	outline-width: 0;
+	transition:0.3s;
+}
+
+
+.WRbottom input[type="submit"]{
+	width:120px;
+	height: 50px;	
+	background-color: #14a085;
+	border: none;
+	float:right;
+	margin-bottom: 30px;
+	color:white;
+}
+
+
+												/* 승인대기중 컨텐츠 끝*/
+												/* 진행중 컨텐츠 */
+#doingContnents{
+	width:60%;
+	background-color: white;
+	height: 225px;
+	margin:0 auto;
+	box-shadow: 0px 0px 15px -5px #8a8a8a;
+	border-radius: 20px;
+}		
+
+#watingContnents img{
+	display: inline-block;
+	float: left;
+}
+
+
+#doingContentsText{
+	display:inline-block;
+	margin-left: 10%;
+	width:55%;
+	height: 100%;
+}	
+												/* 진행중 컨텐츠 끝 */
+												/* 완료컨텐츠 */
+#myContentsdwn{
+	width:100%;
+	padding-bottom: 50px;
+}												
+												
+.completeContnents{
+	width:60%;
+	background-color: white;
+	height: 225px;
+	margin:0 auto;
+	box-shadow: 0px 0px 15px -5px #8a8a8a;
+	border-radius: 20px;
+}		
+
+.completeContnents img{
+	display: inline-block;
+	float: left;
+}
+
+
+.completeContentsText{
+	display:inline-block;
+	margin-left: 10%;
+	width:55%;
+	height: 100%;
+}	
+
+.ContentsTitle{
+	width:80%;
+	height: 150px;
+	float:left;
+}		
+
+.ContentsTitle p:FIRST-CHILD{
+	font-size: 24px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	color:#14a085;
+	margin-bottom: 10px;
+}
+
+.ContentsTitle p:LAST-CHILD{
+	margin:0;
+}									
+				
+				
+#myContentsdwn h3{
+	margin-left:20%;
+	font-size: 36px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	color:#14a085;
+}		
+
+
+
+
+/* 컨텐츠수정 */
+
+
+#basicInfo{
+	width:100%;
+	margin:0 auto;
+	background-color: #f8f8f8;
+	display: none;					/* 컨텐츠수정 안보임 */
+	float:left;
+}
+
+#basicInfoWrap{
+	width:56%;
+	margin:100px auto;
+	
+}
+
+.info{
+	width:100%;
+	height: 200px;
+	margin-top:30px;
+	border: 0.5px solid #e0e0e0;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.info h2{
+	display: inline-block;
+	margin-bottom: 50px;
+	margin-left:25px;
+	margin-top:25px;
+	float:left;
+	font-family: 'Gothic A1', sans-serif;
+	font-weight: bold;
+}
+
+.info div{
+	display: inline-block;
+	margin-top:25px;
+	margin-left:25px;
+	float:left;
+	font-family:Nanum Gothic, sans-serif;
+}
+
+.info input[type="text"]{
+	margin-left: 19%;
+	display: block;
+	clear:both;
+	width:500px;
+}
+
+.info:nth-child(3) div{
+	margin-left:7.5%;
+}
+
+
+
+select{
+	width:200px;
+	height: 50px;
+	margin-top:80px;
+	margin-left:-42.5%;
+	font-size:16px;
+}
+
+.info input[type="file"]{
+	clear: both;
+	margin-top:80px;
+	margin-left:-52%;
+	font-size: 16px;
+}
+
+.info:nth-child(5){
+	height: 100%;
+}
+
+.info:nth-child(5) div{
+	margin-left:7%;
+}
+
+.info textarea{
+	margin:20px 0 30px 7%;
+	widht:900px;
+	height: 400px;
+}
+
+.info:nth-child(6) div{
+	margin-left:5%;
+}
+
+.info:nth-child(6) input[type="file"]{
+	margin-left: -62%;
+}
+
+.info:nth-child(7) div{
+	margin-left:5%;
+}
+
+.info:nth-child(7) input[type="file"]{
+	margin-left: -59%;
+}
+
+.info:nth-child(8) div{
+	margin-left:8%;
+}
+
+.info:nth-child(8) #deadDate{
+	clear: both;
+	margin-left:-27%;
+	margin-top:65px;
+}
+
+.info:nth-child(9) div{
+	margin-left:7.5%;
+}
+
+.info:nth-child(9) input[type="number"]{
+	background-image:url("../resources/img/textbox.png");
+	width:500px;
+	height:30px;
+	border: none;
+	border-bottom: 3px solid 	#14a085;
+	outline-width: 0;
+	transition:0.3s;
+	
+	clear:both;
+	margin-top:80px;
+	margin-left:-39%;
+}
+
+input[type="number"]:focus{
+	box-shadow: 0px 10px 10px #e8e8e8;
+}
+
+#submit{
+	width:100%;
+	height: 150px;
+	margin-top:30px;
+}
+
+#submit #save{
+	float:left;
+	width:200px;
+	height: 50px;
+	font-size: 24px;
+	font-weight: bold;
+	background-color: #14a085;
+	color:white;
+	border: none;
+	margin-left: 38%;
+}			
+
+/* 컨텐츠수정 끝 */		

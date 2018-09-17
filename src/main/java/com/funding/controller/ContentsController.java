@@ -89,4 +89,35 @@ public class ContentsController {
 		
 		return savedName;
 	}
+	
+	
+	@RequestMapping(value="/ModifyContents", method=RequestMethod.POST)
+	public String ModifyContents(ContentDTO dto) throws IOException, Exception{
+		MultipartFile midimg = dto.getC_midimg();
+		String midimgName = uploadFile(midimg.getOriginalFilename(), midimg.getBytes());
+		
+		MultipartFile topimg = dto.getC_topimg();
+		String topimgName = uploadFile(topimg.getOriginalFilename(), topimg.getBytes());
+		
+		MultipartFile thimg = dto.getC_thimg();
+		String thimgName = uploadFile(thimg.getOriginalFilename(),thimg.getBytes());
+		
+		
+		ContentsVO contents = new ContentsVO();
+		contents.setC_num(dto.getC_num());
+		contents.setC_title(dto.getC_title());
+		contents.setC_intro(dto.getC_intro());
+		contents.setC_cate(dto.getC_cate());
+		contents.setC_thimg(thimgName);
+		contents.setC_text(dto.getC_text());
+		contents.setC_midimg(midimgName);
+		contents.setC_topimg(topimgName);
+		contents.setC_dead(dto.getC_dead());
+		contents.setC_goal(dto.getC_goal());
+		
+		/*service.InsertContents(contents);*/
+		
+		
+		return "/reMyPage";
+	}
 }

@@ -52,7 +52,7 @@
       	
       	<c:otherwise>
       		<div>
-      			<a href="MovementMyInfoAction.do">
+      			<a href="/reMyPage">
     	 마이 페이지
     	 		</a>
       		</div>
