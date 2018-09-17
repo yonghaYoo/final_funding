@@ -44,7 +44,7 @@
       	
       	<c:otherwise>
       		<div>
-      			<a href="MovementMyInfoAction.do">
+      			<a href="/Mypage">
     	 마이 페이지
     	 		</a>
       		</div>
@@ -82,13 +82,13 @@
 			<div id="PersonalInformation">
 			<br><br>
 			
-				<div class="name">이름[${member.m_name}]</div><br>
+				<div class="name">이름[${m_info.m_name}]</div><br>
 						
-				<div class="Id">id[${member.m_id}]</div><br>
+				<div class="Id">id[${m_info.m_id}]</div><br>
 				
-				<div class = "Email">이메일[${member.m_email}]</div><br>
+				<div class = "Email">이메일[${m_info.m_email}]</div><br>
 			
-				<div class = "Acc">계좌번호[${member.m_acc}]</div><br>
+				<div class = "Acc">계좌번호[${m_info.m_acc}]</div><br>
 		
 			
 		
@@ -123,7 +123,6 @@
 		</div>
 	</c:forEach>
 	<div id = "ShareFunding">
-		<div>공유하기</div><br>
 		<div>자세히 보기</div><br>
 	</div>	
 	

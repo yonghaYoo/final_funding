@@ -55,6 +55,7 @@
       	<c:otherwise>
       		<div>
       			<a href="/reMyPage">
+
     	 마이 페이지
     	 		</a>
       		</div>

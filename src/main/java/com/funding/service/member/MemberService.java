@@ -14,8 +14,13 @@ public interface MemberService {
 	public MemberVO InfoMember(int m_num);
 
 	public MemberVO login(MemberDTO dto) throws Exception;
-	
-	public void join(MemberVO member)throws Exception;
-	
+
+	public void join(MemberVO member) throws Exception;
+
 	public int idcheck(String m_id);
+
+	public void infoUpdate(MemberVO member) throws Exception;
+
+	public void Memberdelete(int m_num) throws Exception;
+
 }

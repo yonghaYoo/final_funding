@@ -33,13 +33,22 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
+	public void infoUpdate(MemberVO member) throws Exception {
+		dao.infoUpdate(member);
+	}
+
+	@Override
 	public void join(MemberVO member) throws Exception {
 		dao.join(member);
 	}
-	
+
 	@Override
 	public int idcheck(String m_id) {
 		return dao.idcheck(m_id);
+	}
+
+	public void Memberdelete(int m_num) throws Exception {
+		dao.Memberdelete(m_num);
 	}
 
 }
