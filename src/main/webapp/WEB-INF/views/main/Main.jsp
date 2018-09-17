@@ -26,6 +26,7 @@
       <c:choose>
       	<c:when test="${member.c_num == null}">
       		<div>
+
          	<a href="/member/login">
             로그인
             </a>
@@ -45,8 +46,9 @@
       <c:choose>
       	<c:when test="${member.c_num == null}">
       		<div>
+      		<a href="/member/join">
             회원가입
-
+			</a>
          	</div>
       	</c:when>
       	

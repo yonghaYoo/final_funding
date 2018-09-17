@@ -5,21 +5,28 @@
 <mapper namespace="com.funding.mappers.memberMappers">
 	<cache />
 
-
-
 	<select id="login" resultType="MemberVO">
 		select * from member
 		where m_id = #{m_id} and m_pw = #{m_pw}
 	</select>
-
-	<!-- <select id="listMember" parameterType="int" resultType="MemberVO">
-		select * from member
-	</select>
-
-	<select id="infoMember" parameterType="int" resultType="MemberVO">
-		select * from member where m_num=#{m_num}마이페이지
-	</select> -->
 	
+	<insert id="join">
+		insert into member (m_id, m_pw, m_name, m_pno, m_email, m_acc, m_add)
+		values(#{m_id}, #{m_pw}, #{m_name}, #{m_pno}, #{m_email}, #{m_acc}, #{m_add})
+	</insert>
+	
+	<select id="idcheck" parameterType="String" resultType="int">
+		select count(*) from member
+		where m_id = #{m_id}
+	</select>
+	
+	<!-- <select id="listMember" parameterType="int" resultType="MemberVO">
+			select * from member
+		</select>
+
+		<select id="infoMember" parameterType="int" resultType="MemberVO">
+			select * from member where m_num=#{m_num}마이페이지
+		</select> -->
 
 	<!-- <select id="infoUpdate" parameterMap="int" resultMap="MemberVO"> update 
 		Member set m_pw =#{m_pw}, m_email =#{m_email}, m_acc=#{m_acc}, m_add=#{m_add} 

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.funding.domain.MemberVO;
 import com.funding.dto.MemberDTO;
 import com.funding.persistence.member.MemberDAO;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -29,6 +30,16 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberVO login(MemberDTO dto) throws Exception {
 		return dao.login(dto);
+	}
+
+	@Override
+	public void join(MemberVO member) throws Exception {
+		dao.join(member);
+	}
+	
+	@Override
+	public int idcheck(String m_id) {
+		return dao.idcheck(m_id);
 	}
 
 }
