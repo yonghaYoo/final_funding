@@ -16,13 +16,14 @@ public class ContentsVO implements Serializable {
 	private String c_thimg;
 	private int c_remday;
 	private int c_goalper;
+	private int c_approval;
 
 	
 	public ContentsVO() { }
-	
-	public ContentsVO(int c_num, String c_title, String c_cate, String c_intro, String c_text,
-			String c_midimg, String c_topimg, String c_dead, int c_goal, int c_sumprice, String c_thimg, int c_remday,
-			int c_goalper) {
+
+	public ContentsVO(int c_num, String c_title, String c_cate, String c_intro, String c_text, String c_midimg,
+			String c_topimg, String c_dead, int c_goal, int c_sumprice, String c_thimg, int c_remday, int c_goalper,
+			int c_approval) {
 		super();
 		this.c_num = c_num;
 		this.c_title = c_title;
@@ -37,15 +38,8 @@ public class ContentsVO implements Serializable {
 		this.c_thimg = c_thimg;
 		this.c_remday = c_remday;
 		this.c_goalper = c_goalper;
-	
+		this.c_approval = c_approval;
 	}
-
-
-
-
-
-
-
 
 	public int getC_goalper() {
 		return c_goalper;
@@ -145,6 +139,14 @@ public class ContentsVO implements Serializable {
 	}
 	public void setC_sumprice(int c_sumprice) {
 		this.c_sumprice = c_sumprice;
+	}
+
+	public int getC_approval() {
+		return c_approval;
+	}
+
+	public void setC_approval(int c_approval) {
+		this.c_approval = c_approval;
 	}
 	
 	

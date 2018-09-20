@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.funding.domain.MyCompleteContentsVO;
 import com.funding.domain.MyreservationVO;
 import com.funding.persistence.MyreservationDAO;
 
@@ -31,6 +32,11 @@ public class MyreservationServiceImpl implements MyreservationService {
 	public List<MyreservationVO> myPayment(int m_num) {
 		
 		return dao.myPayment(m_num);
+	}
+
+	@Override
+	public List<MyCompleteContentsVO> myCompleteContents(int m_num) {
+		return dao.myCompleteContents(m_num);
 	}
 	
 	

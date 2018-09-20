@@ -25,11 +25,11 @@ public class DetailTest {
 	
 	@Test
 	public void Detail(){
-		int c_num =2004;
+		int c_num =2002;
 		ContentsVO con = new ContentsVO();
 		con = dao.DetailContents(c_num);
 		
-		System.out.println(con.getC_title());
+		System.out.println(con.getC_approval());
 	}
 
 }

@@ -19,7 +19,7 @@
 <!-- 헤더 -->
    <header>
       <div id="title">
-      <a href="AllListContentsAction.do"><h3>프로젝트명</h3></a>
+      <a href="/main"><h3>FUNP</h3></a>
       </div>
       
       <div id="loginList">
@@ -61,11 +61,6 @@
       		</div>
       	</c:otherwise>
       </c:choose>
-         <div>
-         	<a href="/Contents/AddContents">
-            컨텐츠 추가
-            </a>
-         </div>
       </div>
    </header>
    
@@ -166,7 +161,7 @@
                   <p>${Contents.c_intro}</p>
                </div>
                <div class="graph">
-                  <div class="ing">
+                  <div class="ing" style="width:${Contents.c_goalper}%; height:100%;background-color:#14a085 ">
                   </div>
                </div>
                <div class = "contentsinfo">
@@ -188,7 +183,7 @@
       <div id="f_first">
       </div>
       <div id="f_second">
-         와디즈 (주) | 대표이사 신혜성 | <br>
+     FUNP (주) | 대표이사 배오유 | <br>
          사업자등록번호 220-88-37661 | <br>
          통신판매업신고 2013-경기성남-0428<br> 
          경기도 성남시 분당구 판교로 242 (삼평동)<br> 
@@ -196,11 +191,11 @@
       </div>
       <div id="f_third">
       
-      고객센터 1661-9056 | info@wadiz.kr<br> 
+      고객센터 1661-9056 | info@FUNP.kr<br> 
 
-      제휴문의 070-5088-0219 | partner@wadiz.kr<br> 
+      제휴문의 070-5088-0219 | partner@FUNP.kr<br> 
 
-      Yellow ID @와디즈<br> 
+      Yellow ID @FUNP<br> 
 
       이용약관 | 개인정보처리방침 | 수수료 항목<br> 
       </div>

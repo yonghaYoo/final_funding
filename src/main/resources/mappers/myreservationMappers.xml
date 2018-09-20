@@ -28,7 +28,12 @@
 	and c.c_num = f.c_num
 	and f.f_payment=1
 	and m.m_num=#{m_num}
+	</select>
 	
 	
+	<select id="myCompleteContents" parameterType="int" resultType="MyCompleteContentsVO">
+		select c.c_title, c.c_thimg, c.c_intro, c.c_dead, e.ec_achive, c.c_num, c.c_goal from contents c, EXPIRATIONCONTENTS e
+		where c.c_num = e.c_num
+		and e.m_num = #{m_num}
 	</select>
 </mapper>

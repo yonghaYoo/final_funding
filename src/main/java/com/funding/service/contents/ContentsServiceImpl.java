@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.funding.domain.ContentsVO;
+import com.funding.domain.RemDayContentsDTO;
 import com.funding.domain.RewardVO;
 import com.funding.dto.ContentDTO;
 import com.funding.persistence.contents.ContentsDAO;
@@ -53,6 +54,15 @@ public class ContentsServiceImpl implements ContentsService {
 	         
 	         
 	         list.get(i).setC_remday(result);
+	         int c_num = list.get(i).getC_num();
+	         
+	         
+	         RemDayContentsDTO dto = new RemDayContentsDTO();
+	         dto.setResult(result);
+	         dto.setC_num(c_num);
+	         
+	         dao.RemDayContents(dto);
+	         
 	         System.out.println(result);
 	      }
 	      

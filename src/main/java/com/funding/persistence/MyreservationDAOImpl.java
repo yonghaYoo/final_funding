@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.funding.domain.MyCompleteContentsVO;
 import com.funding.domain.MyreservationVO;
 
 @Repository
@@ -19,7 +20,7 @@ public class MyreservationDAOImpl implements MyreservationDAO {
 
 	@Override
 	public List<MyreservationVO> GetMyres(int m_num) {
-		return session.selectOne(namespace + ".getMyres", m_num);
+		return session.selectList(namespace + ".getMyres", m_num);
 	}
 
 	@Override
@@ -32,8 +33,15 @@ public class MyreservationDAOImpl implements MyreservationDAO {
 		return session.selectList(namespace +".myPayment",m_num);
 	}
 
+	@Override
+	public List<MyCompleteContentsVO> myCompleteContents(int m_num) {
+		return session.selectList(namespace + ".myCompleteContents", m_num);
+	}
+
+	
 
 
+	
 	
 
 }

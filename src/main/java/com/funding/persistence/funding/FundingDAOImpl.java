@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.funding.domain.FundingVO;
+import com.funding.domain.SumpriceVO;
 
 
 @Repository
@@ -17,6 +18,11 @@ public class FundingDAOImpl implements FundingDAO{
 	
 	@Override
 	public void InsertReFunding(FundingVO funding) {
+		SumpriceVO vo = new SumpriceVO();
+		vo.setF_price(funding.getF_price());
+		vo.setC_num(funding.getC_num());
+		
+		session.insert(namespace + ".setContentsSumprice",vo);
 		session.insert(namespace + ".InsertReFunding" , funding);
 	}
 

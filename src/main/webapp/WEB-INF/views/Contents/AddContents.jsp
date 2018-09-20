@@ -18,14 +18,15 @@
 	<!-- 헤더 -->
    <header>
       <div id="title">
-      <a href="AllListContentsAction.do"><h3>프로젝트명</h3></a>
+      <a href="/main"><h3>FUNP</h3></a>
       </div>
       
       <div id="loginList">
       <c:choose>
       	<c:when test="${member.c_num == null}">
       		<div>
-         	<a href="MovementLoginAction.do">
+
+         	<a href="/member/login">
             로그인
             </a>
             </div>
@@ -33,7 +34,7 @@
       	
          <c:otherwise>
          	<div>
-         	<a href="LogoutAction.do">
+         	<a href="/member/logout">
             로그아웃
             </a>
             </div>
@@ -44,24 +45,21 @@
       <c:choose>
       	<c:when test="${member.c_num == null}">
       		<div>
+      		<a href="/member/join">
             회원가입
-
+			</a>
          	</div>
       	</c:when>
       	
       	<c:otherwise>
       		<div>
-      			<a href="MovementMyInfoAction.do">
+      			<a href="/reMyPage">
+
     	 마이 페이지
     	 		</a>
       		</div>
       	</c:otherwise>
       </c:choose>
-         <div>
-         	<a href="MovementAddContentsAction.do">
-            컨텐츠 추가
-            </a>
-         </div>
       </div>
    </header>
    
@@ -171,6 +169,7 @@
 				</div>
 				
 				<div id="submit">
+				<input type = "hidden" value = 1 name = "c_approval">
 				 <input type="hidden" value=${member.c_num } name="c_num">
 					<input type="submit" id ="save" value="저장">
 					<div id="nextStep"><p>다음 단계</p></div>
@@ -221,7 +220,6 @@
 			
 			<div id ="nextorbefore">
 				<div id="before"><p>이전단계</p></div>
-				<div id="next"><p>다음단계</p></div>
 			</div>
 		</div>
 	<!-- 리워드 설정 끝 -->
@@ -234,7 +232,7 @@
 		<div id="f_first">
 		</div>
 		<div id="f_second">
-			와디즈 (주) | 대표이사 신혜성 | <br>
+			FUNP (주) | 대표이사 배오유 | <br>
 			사업자등록번호 220-88-37661 | <br>
 			통신판매업신고 2013-경기성남-0428<br> 
 			경기도 성남시 분당구 판교로 242 (삼평동)<br> 
@@ -242,11 +240,11 @@
 		</div>
 		<div id="f_third">
 		
-		고객센터 1661-9056 | info@wadiz.kr<br> 
+		고객센터 1661-9056 | info@FUNP.kr<br> 
 
-		제휴문의 070-5088-0219 | partner@wadiz.kr<br> 
+		제휴문의 070-5088-0219 | partner@FUNP.kr<br> 
 
-		Yellow ID @와디즈<br> 
+		Yellow ID @FUNP<br> 
 
 		이용약관 | 개인정보처리방침 | 수수료 항목<br> 
 		</div>

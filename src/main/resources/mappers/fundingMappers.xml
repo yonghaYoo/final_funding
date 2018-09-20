@@ -8,15 +8,20 @@
 	<insert id="InsertReFunding" parameterType="FundingVO">
 		insert into
 		funding(
-		f_rename,f_readd,f_price,f_card_1,f_card_2,f_card_3,f_card_4,f_resday,f_num,m_num,c_num
+		f_rename,f_readd,f_price,f_card_1,f_card_2,f_card_3,f_card_4,f_resday,f_num,m_num,c_num,f_payment
 		)values(
-		#{f_rename},#{f_readd},#{f_price},#{f_card_1},#{f_card_2},#{f_card_3},#{f_card_4},sysdate,funding_f_num.nextval,#{m_num},#{c_num}
+		#{f_rename},#{f_readd},#{f_price},#{f_card_1},#{f_card_2},#{f_card_3},#{f_card_4},sysdate,funding_f_num.nextval,#{m_num},#{c_num},#{f_payment}
 		)
 
 	</insert>
 
 	<select id="MyFunding" parameterType="int" resultType="FundingVO">
-		select from * Funding where m_num =#{m_num}
+		select
+		from * Funding where m_num =#{m_num}
 	</select>
 
+	<update id="setContentsSumprice" parameterType="SumpriceVO">
+		update contents set c_sumprice = c_sumprice + #{f_price}
+		where c_num = #{c_num}
+	</update>
 </mapper>

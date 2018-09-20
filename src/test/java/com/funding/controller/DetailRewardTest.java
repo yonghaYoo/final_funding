@@ -34,6 +34,7 @@ public class DetailRewardTest {
 		System.out.println(con.getC_title());
 		
 		System.out.println(list.get(1).getR_title());
+		
 	}
 	
 }
