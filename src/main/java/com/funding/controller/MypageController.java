@@ -14,10 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.funding.domain.ContentsVO;
 import com.funding.domain.MemberVO;
+import com.funding.domain.MyCompleteContentsVO;
 import com.funding.domain.MyreservationVO;
+import com.funding.domain.RewardVO;
 import com.funding.service.Myreservation.MyreservationService;
+import com.funding.service.contents.ContentsService;
 import com.funding.service.member.MemberService;
+import com.funding.service.reward.RewardService;
 
 @Controller
 public class MypageController {
@@ -27,6 +32,13 @@ public class MypageController {
 	
 	@Inject
 	private MyreservationService myres_service;
+	
+	@Inject
+	private ContentsService con_service;
+	
+	
+	@Inject
+	private RewardService re_service;
 	
 	@RequestMapping(value="/Mypage",method=RequestMethod.GET)
 	public String InfoMember(@RequestParam("m_num") int m_num,Model model){
@@ -48,7 +60,54 @@ public class MypageController {
 	
 
 	@RequestMapping(value="/reMyPage", method=RequestMethod.GET)
-	public void reMyInfo(){
+	public void reMyInfo(HttpServletRequest request,Model model){
+		
+		//세션데이터 가져오기
+		HttpSession session = request.getSession();
+		
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		/*int c_num = (int)session.getAttribute("c_num");*/
+		
+		int m_num = member.getM_num();
+		int c_num = member.getC_num();
+		
+		//내 예약 목록.
+		List<MyreservationVO> myreslist = new ArrayList<MyreservationVO>();
+		myreslist = myres_service.GetMyres(m_num);
+		
+		
+		model.addAttribute("myReslist",myreslist);
+		
+		//내 결제 목록.
+		List<MyreservationVO> myPayment = new ArrayList<MyreservationVO>();
+		
+		myPayment=myres_service.myPayment(m_num);
+		
+		model.addAttribute("myPaylist",myPayment);
+		
+		//내 컨텐츠.
+		ContentsVO mycontents = new ContentsVO();
+		
+		mycontents = con_service.DetailContents(c_num);
+		
+		model.addAttribute("mycontents", mycontents);
+		
+		//내 컨텐츠 리워드
+		List<RewardVO> rewardList = new ArrayList<RewardVO>();
+		
+		rewardList = re_service.DetailRewardList(c_num);
+		model.addAttribute("re_list", rewardList);
+		
+		
+		//완료된 컨텐츠
+		List<MyCompleteContentsVO> myCompleteContents = new ArrayList<MyCompleteContentsVO>();
+		
+		myCompleteContents = myres_service.myCompleteContents(m_num);
+		
+		model.addAttribute("myCompleteContents",myCompleteContents);
+		
+		
+		
 		
 	}
 

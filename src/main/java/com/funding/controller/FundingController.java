@@ -67,7 +67,7 @@ public class FundingController {
 		
 		fun_service.InsertReFunding(funding);
 		
-		return "/main/Main";
+		return "redirect:/main";
 	}
 	
 }

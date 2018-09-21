@@ -2,6 +2,7 @@ package com.funding.persistence;
 
 import java.util.List;
 
+import com.funding.domain.MyCompleteContentsVO;
 import com.funding.domain.MyreservationVO;
 
 public interface MyreservationDAO {
@@ -11,4 +12,6 @@ public interface MyreservationDAO {
 	public void delectFunding(int m_num) throws Exception;
 	
 	public List<MyreservationVO> myPayment(int m_num);
+	
+	public List<MyCompleteContentsVO> myCompleteContents(int m_num);
 }

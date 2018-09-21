@@ -14,15 +14,16 @@
 
 	<insert id="InsertContents" parameterType="ContentsVO" >
 		insert into contents(
-			c_num,c_title,c_cate,c_intro,c_text,c_midimg,c_topimg,c_dead,c_goal,c_thimg
+			c_num,c_title,c_cate,c_intro,c_text,c_midimg,c_topimg,c_dead,c_goal,c_thimg,c_approval
 		)values(
-			#{c_num},#{c_title},#{c_cate},#{c_intro},#{c_text},#{c_midimg},#{c_topimg},#{c_dead},#{c_goal},#{c_thimg}
+			#{c_num},#{c_title},#{c_cate},#{c_intro},#{c_text},#{c_midimg},#{c_topimg},#{c_dead},#{c_goal},#{c_thimg},#{c_approval}
 		)
 		
 	</insert>
 	
-	<update id="RemDayContents" parameterType="String">
-		update contents set c_remday = (#{c_dead}-SYSDATE)+1
+	<update id="RemDayContents" parameterType="RemDayContentsDTO">
+		update contents set c_remday = #{result}
+		where c_num = #{c_num}
 	</update>
 	
 	<update id="GoalPerContents" parameterType="ContentsVO">

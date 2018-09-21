@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.funding.domain.ContentsVO;
+import com.funding.domain.RemDayContentsDTO;
 
 
 @Repository
@@ -37,6 +38,11 @@ public class ContentsDAOImpl implements ContentsDAO {
 	@Override
 	public void GoalPerContents(ContentsVO contents) {
 		session.update(namespace + ".GoalPerContents", contents);
+	}
+
+	@Override
+	public void RemDayContents(RemDayContentsDTO dto) {
+		 session.update(namespace + ".RemDayContents", dto);
 	}
 
 

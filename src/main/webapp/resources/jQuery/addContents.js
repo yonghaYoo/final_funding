@@ -30,7 +30,7 @@ $('#newReward').click(function(){
 		html+='<p>금액<input type="number" id="rewardMoney" name="r_price"></p>';
 		html+='<p>리워드명<input type="text" id="rewardTitle" name="r_title"></p>';
 		html+='<div>상세설명</div><textarea rows="6" cols="72" name="r_detail"></textarea></div>';
-		html+='<div class="delete"><img src="img/delete.png"></div>';
+		html+='<div class="delete"><img src="/resources/img/delete.png"></div>';
 		html+='<div class="resubmit"><input type="submit"  id="resubmit" value="리워드 저장"></div></form></div>';
 	
 		$('#newReward').before(html);	
@@ -39,7 +39,7 @@ $('#newReward').click(function(){
 
 	$('body').on('click','.delete',function(){
 		$(this).closest('.reWrap').hide();
-		alert("zzz")
+		alert("삭제되었습니다.")
 	});
 
 
@@ -58,7 +58,7 @@ $('#newReward').click(function(){
 	});
 	
 	$('body').on('submit', '.reWrap form', function(){
-		alert("aa");
+		alert("저장되었습니다. 추가를 원하시면 계속 추가해주세요. 더이상 추가를 원하지 않으면 상단의 타이틀을 클릭하세요.");
 		
 		$.ajax({
 			url:"/Reward/AddReward",
