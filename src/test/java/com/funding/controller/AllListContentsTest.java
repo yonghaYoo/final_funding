@@ -29,6 +29,7 @@ public class AllListContentsTest {
 		List<ContentsVO> list = new ArrayList<ContentsVO>();
 		list = dao.AllListContents();
 		
-		System.out.println(list.get(2).getC_title());
+		System.out.println(list.get(11).getC_title());
+		System.out.println(list.get(11).getC_dead());
 	}
 }

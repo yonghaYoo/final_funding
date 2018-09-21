@@ -21,7 +21,7 @@ public class idcheckTest {
 	
 	@Test
 	public void test() {
-		String id = "bhs4645";
+		String id = "cc";
 		int a = dao.idcheck(id);
 		System.out.println(a);
 	}

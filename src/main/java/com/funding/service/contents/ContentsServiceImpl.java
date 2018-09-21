@@ -23,15 +23,21 @@ public class ContentsServiceImpl implements ContentsService {
 	@Override
 	public List<ContentsVO> AllListContents() {
 		List<ContentsVO> list = new ArrayList<ContentsVO>();
-	      list = dao.AllListContents();
+	     	list = dao.AllListContents();
 
 	      for (int i = 0; i < list.size(); i++) {
 	         Date date = new Date();
 	         SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd");
-	         	
+	         System.out.println(list.get(i).getC_title());
+	         
+	         
 	         String today = f.format(date);
 	         String itemDate = list.get(i).getC_dead();
-
+	         
+	         
+	         System.out.println(list.get(i).getC_dead());
+	         System.out.println("wow" + itemDate);
+	         
 	         List<Integer> tlist = new ArrayList<Integer>();
 	         List<Integer> ilist = new ArrayList<Integer>();
 	         tlist.add(Integer.parseInt(today.substring(0, 4)));
