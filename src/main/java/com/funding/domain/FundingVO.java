@@ -16,29 +16,14 @@ public class FundingVO implements Serializable {
 	private int m_num;
 	private int c_num;
 	private String f_rename;
+	private int f_payment;
 	
 	public FundingVO() {}
 	
 	
-	
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
 
 	public FundingVO(int f_num, int f_resday, int f_price, int f_amount, String f_readd, int f_card_1, int f_card_2,
-			int f_card_3, int f_card_4, int r_num, int m_num, int c_num, String f_rename) {
+			int f_card_3, int f_card_4, int r_num, int m_num, int c_num, String f_rename, int f_payment) {
 		super();
 		this.f_num = f_num;
 		this.f_resday = f_resday;
@@ -53,23 +38,8 @@ public class FundingVO implements Serializable {
 		this.m_num = m_num;
 		this.c_num = c_num;
 		this.f_rename = f_rename;
+		this.f_payment = f_payment;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -159,4 +129,18 @@ public class FundingVO implements Serializable {
 	}
 
 
+
+	public int getF_payment() {
+		return f_payment;
+	}
+
+
+
+	public void setF_payment(int f_payment) {
+		this.f_payment = f_payment;
+	}
+
+
+	
+	
 }

@@ -26,7 +26,7 @@ public class mypagePaymentTest {
 	@Test
 	public void test() {
 
-		int m_num = 1002;
+		int m_num = 1004;
 		List<MyreservationVO> list = new ArrayList<MyreservationVO>();
 
 		list = dao.myPayment(m_num);

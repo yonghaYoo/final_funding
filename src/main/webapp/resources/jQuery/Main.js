@@ -42,7 +42,7 @@ $(function(){
 		}
 	
 		
-		$.getJSON('data2.json',function(data){
+		$.getJSON('/resources/json/data2.json',function(data){
 		
 			$.each(data,function(index,item){
 				if(nowpage==index){
@@ -108,7 +108,7 @@ $(function(){
 		}
 	
 		
-		$.getJSON('data2.json',function(data){
+		$.getJSON('/resources/json/data2.json',function(data){
 			
 			$.each(data,function(index,item){
 				if(nowpage==index){

@@ -23,9 +23,9 @@
 
 	<insert id="join">
 		insert into member (m_id, m_pw, m_name, m_pno,
-		m_email, m_acc, m_add)
+		m_email, m_acc, m_add, m_num, c_num)
 		values(#{m_id}, #{m_pw}, #{m_name}, #{m_pno},
-		#{m_email}, #{m_acc}, #{m_add})
+		#{m_email}, #{m_acc}, #{m_add}, member_m_num.nextval, contents_c_num.nextval)
 	</insert>
 
 	<select id="idcheck" parameterType="String" resultType="int">

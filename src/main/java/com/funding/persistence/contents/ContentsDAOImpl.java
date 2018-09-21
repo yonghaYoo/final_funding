@@ -42,9 +42,11 @@ public class ContentsDAOImpl implements ContentsDAO {
 
 	@Override
 	public void RemDayContents(RemDayContentsDTO dto) {
-		 session.update(namespace + ".RemDayContents", dto);
+
+		session.update(namespace + ".RemDayContents", dto);
 	}
 
 
+	
 
 }
